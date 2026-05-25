@@ -1,0 +1,130 @@
+.privacy-page {
+  min-height: 100vh;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #020617, #0f172a, #111827);
+  position: relative;
+  overflow: hidden;
+}
+
+.privacy-page::before {
+  content: "";
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  background: rgba(34, 211, 238, 0.08);
+  border-radius: 50%;
+  top: -140px;
+  left: -120px;
+  filter: blur(80px);
+}
+
+.privacy-page::after {
+  content: "";
+  position: absolute;
+  width: 380px;
+  height: 380px;
+  background: rgba(59, 130, 246, 0.08);
+  border-radius: 50%;
+  bottom: -140px;
+  right: -100px;
+  filter: blur(80px);
+}
+
+.privacy-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.privacy-hero {
+  text-align: center;
+  margin-bottom: 38px;
+}
+
+.privacy-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: rgba(34, 211, 238, 0.12);
+  border: 1px solid rgba(34, 211, 238, 0.24);
+  color: #67e8f9;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  margin-bottom: 18px;
+  backdrop-filter: blur(12px);
+}
+
+.privacy-hero h1 {
+  color: #f8fafc;
+  font-size: 44px;
+  margin-bottom: 14px;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.privacy-hero p {
+  max-width: 760px;
+  margin: 0 auto;
+  color: rgba(226, 232, 240, 0.78);
+  line-height: 1.9;
+  font-size: 15px;
+}
+
+.privacy-panel {
+  background: rgba(15, 23, 42, 0.62);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 28px;
+  padding: 34px;
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  box-shadow:
+    0 24px 80px rgba(0, 0, 0, 0.34),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.privacy-section + .privacy-section {
+  margin-top: 28px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.privacy-section h2 {
+  margin: 0 0 12px;
+  color: #f8fafc;
+  font-size: 23px;
+  font-weight: 700;
+}
+
+.privacy-section p {
+  margin: 0;
+  color: rgba(203, 213, 225, 0.8);
+  line-height: 1.9;
+  font-size: 15px;
+}
+
+@media (max-width: 768px) {
+  .privacy-page {
+    padding: 40px 16px;
+  }
+
+  .privacy-hero h1 {
+    font-size: 32px;
+  }
+
+  .privacy-panel {
+    padding: 24px;
+    border-radius: 22px;
+  }
+
+  .privacy-section h2 {
+    font-size: 20px;
+  }
+
+  .privacy-section p {
+    font-size: 14px;
+  }
+}

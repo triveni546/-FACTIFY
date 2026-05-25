@@ -1,0 +1,268 @@
+@import url("https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&f[]=cabinet-grotesk@500,700&display=swap");
+
+:root,
+[data-theme="light"] {
+  --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+  --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+  --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  --text-lg: clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+  --text-xl: clamp(1.6rem, 1.2rem + 1.8vw, 2.7rem);
+  --text-2xl: clamp(2.1rem, 1.4rem + 3vw, 4.2rem);
+
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+
+  --radius-md: 0.9rem;
+  --radius-lg: 1.2rem;
+  --radius-xl: 1.7rem;
+  --radius-full: 9999px;
+
+  --font-body: "Satoshi", sans-serif;
+  --font-display: "Cabinet Grotesk", sans-serif;
+
+  --color-bg: #f4f7fb;
+  --color-bg-2: #e8eef8;
+  --color-surface: rgba(255, 255, 255, 0.5);
+  --color-surface-strong: rgba(255, 255, 255, 0.72);
+  --color-border: rgba(30, 41, 59, 0.12);
+  --color-text: #18202d;
+  --color-text-muted: #5f6b7a;
+  --color-primary: #0f766e;
+  --color-secondary: #2563eb;
+  --color-danger: #d92d20;
+  --color-success: #1f8f57;
+  --shadow-lg: 0 24px 60px rgba(15, 23, 42, 0.14);
+}
+
+[data-theme="dark"] {
+  --color-bg: #07111f;
+  --color-bg-2: #0d1726;
+  --color-surface: rgba(10, 20, 35, 0.5);
+  --color-surface-strong: rgba(10, 20, 35, 0.72);
+  --color-border: rgba(255, 255, 255, 0.1);
+  --color-text: #edf4ff;
+  --color-text-muted: #9fb0c4;
+  --color-primary: #66d9cf;
+  --color-secondary: #7aa2ff;
+  --color-danger: #ff7d73;
+  --color-success: #58d68d;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background:
+    radial-gradient(circle at top left, rgba(37, 99, 235, 0.16), transparent 30%),
+    radial-gradient(circle at top right, rgba(15, 118, 110, 0.18), transparent 28%),
+    linear-gradient(180deg, var(--color-bg), var(--color-bg-2));
+}
+
+.register-page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: var(--space-8) var(--space-4);
+}
+
+.glass {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-lg);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+@supports not ((backdrop-filter: blur(18px)) or (-webkit-backdrop-filter: blur(18px))) {
+ .glass {
+    background: rgba(255, 255, 255, 0.82);
+  }
+  [data-theme="dark"].glass {
+    background: rgba(10, 20, 35, 0.88);
+  }
+}
+
+.register-card {
+  width: 100%;
+  max-width: 480px;
+  padding: var(--space-6);
+  border-radius: var(--radius-xl);
+}
+
+.register-card-header {
+  text-align: center;
+  margin-bottom: var(--space-5);
+}
+
+.eyebrow {
+  display: inline-flex;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.08);
+  color:  rgb(11, 99, 11) !important;
+  font-size: var(--text-sm);
+  font-weight: 700;
+}
+
+.register-card-header h2 {
+  margin: 0.5rem 0 0;
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  letter-spacing: -0.03em;
+  color: #0b6977 ;
+}
+
+.register-card-header p {
+  margin: 0.85rem 0 0;
+  color: #000000;
+  line-height: 1.7;
+}
+
+.register-form {
+  display: grid;
+  gap: 1rem;
+}
+
+.form-group {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.form-group label {
+  font-size: var(--text-sm);
+  font-weight: 700;
+}
+
+.input-wrap {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface-strong);
+  transition: 0.25s ease;
+}
+
+.input-wrap:focus-within {
+  border-color: rgba(15, 118, 110, 0.4);
+  box-shadow: 0 0 0 4px rgba(15, 118, 110, 0.12);
+}
+
+.input-error {
+  border-color: rgba(217, 45, 32, 0.45);
+}
+
+.form-group input {
+  width: 100%;
+  min-height: 52px;
+  padding: 0 1rem;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--color-text);
+}
+
+.error-text {
+  color: var(--color-danger);
+  font-size: var(--text-sm);
+  font-weight: 600;
+}
+
+.error-box,
+.success-box {
+  padding: 0.9rem 1rem;
+  border-radius: var(--radius-lg);
+  font-size: var(--text-sm);
+  font-weight: 600;
+}
+
+.error-box {
+  background: rgba(217, 45, 32, 0.1);
+  color: var(--color-danger);
+}
+
+.success-box {
+  background: rgba(31, 143, 87, 0.1);
+  color: var(--color-success);
+}
+
+.register-btn {
+  min-height: 50px;
+  margin-top: 0.3rem;
+  border: none;
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  color: #090909;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.register-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.register-btn:disabled {
+  opacity: 0.72;
+  cursor: not-allowed;
+}
+
+.register-footer {
+  margin-top: 0.35rem;
+  text-align: center;
+  color: #000000;
+}
+
+.register-footer a {
+  color: rgb(11, 99, 11);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.register-footer a:hover {
+  text-decoration: underline;
+}
+.terms-check-wrap {
+  margin-top: 4px;
+  margin-bottom: 6px;
+}
+
+.terms-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: rgba(10, 11, 11, 0.88);
+  font-size: 14px;
+  line-height: 1.6;
+  cursor: pointer;
+}
+
+.terms-check input {
+  margin-top: 3px;
+  accent-color: #22d3ee;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.terms-check a {
+  color: #e10404;
+  text-decoration: none;
+}
+
+.terms-check a:hover {
+  text-decoration: underline;
+}
+label,.form-group label,.input-group label{
+  color: #000000 !important;
+}

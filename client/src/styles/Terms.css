@@ -1,0 +1,144 @@
+.terms-page {
+  min-height: 100vh;
+  padding: 60px 20px;
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(59, 130, 246, 0.12),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at bottom left,
+      rgba(34, 211, 238, 0.08),
+      transparent 30%
+    ),
+    linear-gradient(135deg, #020617, #0f172a, #111827);
+  position: relative;
+  overflow: hidden;
+}
+
+.terms-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.terms-hero {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.terms-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: rgba(59, 130, 246, 0.12);
+  border: 1px solid rgba(59, 130, 246, 0.22);
+  color: #93c5fd;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 18px;
+  backdrop-filter: blur(10px);
+}
+
+.terms-hero h1 {
+  color: #f8fafc;
+  font-size: 44px;
+  line-height: 1.15;
+  margin-bottom: 14px;
+  font-weight: 800;
+}
+
+.terms-hero p {
+  max-width: 720px;
+  margin: 0 auto;
+  color: rgba(226, 232, 240, 0.78);
+  line-height: 1.8;
+  font-size: 15px;
+}
+
+.terms-panel {
+  background: rgba(15, 23, 42, 0.68);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 28px;
+  padding: 34px;
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.03);
+  position: relative;
+  overflow: hidden;
+}
+
+.terms-panel::before {
+  content: "";
+  position: absolute;
+  width: 240px;
+  height: 240px;
+  background: rgba(59, 130, 246, 0.08);
+  border-radius: 50%;
+  top: -120px;
+  right: -120px;
+  filter: blur(20px);
+}
+
+.terms-section {
+  position: relative;
+  z-index: 1;
+}
+
+.terms-section + .terms-section {
+  margin-top: 28px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.terms-section h2 {
+  margin: 0 0 12px;
+  color: #f8fafc;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.terms-section p {
+  margin: 0;
+  color: rgba(203, 213, 225, 0.8);
+  line-height: 1.9;
+  font-size: 15px;
+}
+
+@media (max-width: 768px) {
+  .terms-page {
+    padding: 40px 16px;
+  }
+
+  .terms-hero {
+    margin-bottom: 30px;
+  }
+
+  .terms-hero h1 {
+    font-size: 32px;
+  }
+
+  .terms-hero p {
+    font-size: 14px;
+  }
+
+  .terms-panel {
+    padding: 22px;
+    border-radius: 22px;
+  }
+
+  .terms-section h2 {
+    font-size: 20px;
+  }
+
+  .terms-section p {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+}
